@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects - Creative Hub</title>
+
+<style>
+/* BODY - SOLID GRADIENT FON */
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: #1b1351;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background-color:#1d0436;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#ffd700;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+    margin:0;
+    padding:0;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:16px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#ff4d94;
+}
+
+/* PROJECTS SECTION */
+.projects{
+    padding:100px 50px;
+    text-align:center;
+}
+
+.projects h1{
+    font-size:50px;
+    margin-bottom:60px;
+    color:white; /* oddiy rang */
+}
+
+/* CARD CONTAINER */
+.card-container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+/* CARDS */
+.card{
+    width:280px;
+    padding:40px 25px;
+    border-radius:25px;
+    text-align:left;
+    color:white;
+    cursor:pointer;
+    transition:0.4s;
+    box-shadow:0 15px 30px rgba(0,0,0,0.5);
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.05);
+    box-shadow:0 20px 40px rgb(187, 187, 169);
+}
+
+/* GRADIENT CARDS */
+.card1{
+    background: linear-gradient(135deg,#f87171,#fca5a5);
+}
+
+.card2{
+    background: linear-gradient(135deg,#a78bfa,#c084fc);
+}
+
+.card3{
+    background: linear-gradient(135deg,#34d399,#3b82f6);
+}
+
+.card h3{
+    margin:0 0 10px;
+    font-size:22px;
+}
+
+.card p{
+    margin:0;
+    opacity:0.9;
+    font-size:16px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+    .card-container{
+        flex-direction:column;
+        align-items:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🚀 Creative Hub</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="projects">
+    <h1>⭐ Projects</h1>
+
+    <div class="card-container">
+        <div class="card card1">
+            <h3>Smart City</h3>
+            <p>Modern city services</p>
+        </div>
+
+        <div class="card card2">
+            <h3>Quiz App</h3>
+            <p>Fun learning challenges</p>
+        </div>
+
+        <div class="card card3">
+            <h3>Dashboard</h3>
+            <p>User insights & stats</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

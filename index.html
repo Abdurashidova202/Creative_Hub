@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Hub</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#1b1351,#2d246f);
+    color:white;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background: linear-gradient(90deg,#1d0436,#2d246f);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#ffd700;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+    margin:0;
+    padding:0;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:16px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#ff4d94;
+}
+
+.btn{
+    background: linear-gradient(45deg,#ff4d94,#8f5bff);
+    border:none;
+    padding:8px 14px;
+    border-radius:20px;
+    color:white;
+    cursor:pointer;
+}
+
+/* HERO SECTION */
+.main{
+    height:85vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.learn{
+    font-size:60px;
+    font-weight:700;
+    background: linear-gradient(90deg,#d946ef,#60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main p{
+    margin-top:20px;
+    color:#d1d5db;
+    font-size:18px;
+}
+
+/* EXPLORE BUTTON */
+.btn1{
+    margin-top:30px;
+    padding:14px 30px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    color:white;
+    cursor:pointer;
+    background: linear-gradient(45deg,#ff4d4d,#ff0066);
+    box-shadow:0 0 20px rgba(255,0,100,0.6);
+    transition:0.3s;
+}
+
+.btn1:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 30px rgba(255,0,100,0.9);
+}
+
+/* MODAL BACKGROUND */
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter: blur(6px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    visibility:hidden;
+    transition:0.4s ease;
+}
+
+.modal.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* MODAL CARD */
+.modal-content{
+    background: linear-gradient(45deg,#ff4d4d,#ff0066);
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    width:90%;
+    max-width:420px;
+    box-shadow:0 0 30px rgba(255,0,100,0.6);
+    transform:scale(0.7);
+    transition:0.4s ease;
+    animation: glow 2s infinite alternate;
+}
+
+.modal.active .modal-content{
+    transform:scale(1);
+}
+
+@keyframes glow{
+    from{
+        box-shadow:0 0 20px rgba(255,0,100,0.5);
+    }
+    to{
+        box-shadow:0 0 50px rgba(255,0,100,1);
+    }
+}
+
+.close-btn{
+    margin-top:15px;
+    padding:8px 18px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* Mobile */
+@media(max-width:500px){
+    .learn{
+        font-size:40px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🚀 Creative Hub</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            
+        </ul>
+    </nav>
+    <button class="btn">🎨</button>
+</header>
+
+<div class="main">
+    <div class="learn">Learn • Build • Shine ✨</div>
+    <p>Turning ideas into colorful experiences</p>
+    <button class="btn1" onclick="openModal()">Explore More</button>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal" onclick="outsideClick(event)">
+    <div class="modal-content">
+        <h2>🎉 About This Project</h2>
+        <p>A vibrant animated website using modern web techniques.</p>
+        <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+
+<script>
+    const modal = document.getElementById("modal");
+const skills = document.getElementById("skillsSection");
+
+function openModal(){
+    modal.classList.add("active");
+}
+
+function closeModal(){
+    modal.classList.remove("active");
+}
+
+function outsideClick(e){
+    if(e.target === modal){
+        closeModal();
+    }
+}
+
+function toggleSkills(){
+    skills.classList.toggle("active");
+}
+
+document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){
+        closeModal();
+        skills.classList.remove("active");
+    }
+});
+</script>
+
+</body>
+</html>
+
